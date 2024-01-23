@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="pop-up.css">
+  <title>Jun's Portfolio 2023-24</title><!--Creates a title that is displayed on the actual tab-->
+  <link rel="icon" type="image/x-icon" href="images/favicon.png"><!--Creates a favicon (the image on a tab) that is displayed on the actual tab-->
+  <style>
+body { /* Making the background */
+  background-image: url('images/background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create a column layout with Flexbox */
+.row {
+  display: flex;
+}
+
+/* Left column (menu) */
+.left {
+  flex: 35%;
+  padding: 20px 0;
+}
+
+.left h2 {
+  padding-left: 8px;
+}
+
+/* Right column (page content) */
+.right {
+  flex: 65%;
+  padding: 15px;
+}
+
+/* Style the search box */
+#mySearch {
+  width: 100%;
+  font-size: 18px;
+  padding: 8px;
+  border: 0px solid #020b04;
+}
+
+/* Style the navigation menu inside the left column */
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myMenu li a {
+  padding: 8px;
+  text-decoration: none;
+  color: black;
+  display: block
+}
+
+#myMenu li a:hover {
+  background-color: #f7be89;
+}
+</style>
+</head>
+
+<body>
+  
+  <div class="container">
+      <div class="navbar">
+          <img src="images/logo.png" width="280px" class="logo">
+          <nav></nav>
+  
+<div class="row">
+  <div class="left" style="background-color:#fca24e;">
+    <h2 style= "color: black;">Menu</h2>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+  <li><a href="about.html" style= "color: black; font-size:20px;">About Me</a></li>
+  <li><a href="projects.html" style= "color: black; font-size:20px;">Projects</a></li>
+  <li><a href="usefulbookmarks.html"style= "color: black; font-size:20px;">Useful Bookmarks</a></li>
+  <li><a href="weeklyjournal.html"style= "color: black; font-size:20px;">Weekly Journal</a></li>
+  <li><a href="finalproject.html"style= "color: black; font-size:20px;">Final Project</a></li>
+</ul>
+  </div>
+  
+  <div class="right" style="background-color:#fffcfc;">
+    
+  <h2 style="color:#ed6633;">Jun's Portfolio 2023-24</h2>
+    
+    <p style= "color:#ed6633; font-size:20px;">Welcome to my <b>2023-24</b> Computer Science portfolio.</p>
+    <p style= "color:#ed6633; font-size:20px;">In my portfolio, you can learn more about me, check out my completed projects, some useful bookmarks that helped me throughout this semester, a weekly journal that summarizes our weekly activities, and a final project.</p>
+    <p style= "color:#ed6633; font-size:20px;">I hope you enjoy scrolling through my experience in this grade 11 computer science course.</p>
+    <p style= "color:#ed6633; font-size:17px;">*Find categories (Weekly Journal, Final Project, etc...) using the search bar*</p>
+  </div>
+</div>
+    <script>
+function myFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+  
+</body>
+</html>
+
